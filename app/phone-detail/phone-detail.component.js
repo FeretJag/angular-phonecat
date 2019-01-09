@@ -23,6 +23,7 @@ angular.
           .then(function(data) {
             console.log("response", data.status);
             self.paymentResponse = data.status;
+            self.phone.stock--;
           })
           .catch(function(error) {
             console.error("error", error);
