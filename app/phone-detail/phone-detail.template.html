@@ -114,5 +114,12 @@
     <span>Additional Features</span>
     <dd>{{$ctrl.phone.additionalFeatures}}</dd>
   </li>
+  <li>
+      <span>Stock</span>
+      <dd>{{$ctrl.phone.stock}}</dd>
+    </li>
 </ul>
-<button class="btn" ng-click="$ctrl.pay($ctrl.phone.id)">Paiement</button>
+
+<button class="btn" ng-disabled="$ctrl.phone.stock <= 0" ng-click="$ctrl.pay($ctrl.phone.id)" >Paiement</button> 
+<span ng-if="$ctrl.phone.stock <= 0">(Rupture de stock)</span>
+

@@ -54,6 +54,7 @@
         ], 
         "weight": "110.0 grams"
     }, 
+    "stock": 105, 
     "storage": {
         "flash": "220MB", 
         "ram": "256MB"

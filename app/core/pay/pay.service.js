@@ -8,7 +8,7 @@ angular.
         console.log('doPayment');
         return $http.get('payments/ok.json');
       };
-
+      
       return {
         doPayment: doPayment
       };
