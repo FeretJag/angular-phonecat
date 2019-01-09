@@ -122,4 +122,5 @@
 
 <button class="btn" ng-disabled="$ctrl.phone.stock <= 0" ng-click="$ctrl.pay($ctrl.phone.id)" >Paiement</button> 
 <span ng-if="$ctrl.phone.stock <= 0">(Rupture de stock)</span>
+<span ng-if="$ctrl.paymentResponse">Payment {{$ctrl.paymentResponse}}</span>
 

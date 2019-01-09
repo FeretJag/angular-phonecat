@@ -6,7 +6,9 @@ angular.
   
       var doPayment = function(phoneId) {
         console.log('doPayment');
-        return $http.get('payments/ok.json');
+        return $http.get('payments/ok.json').then(function(res) {
+          return res.data;
+        });
       };
       
       return {

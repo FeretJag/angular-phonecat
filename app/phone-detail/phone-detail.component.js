@@ -8,6 +8,7 @@ angular.
     controller: ['$routeParams', 'Phone', 'Pay',
       function PhoneDetailController($routeParams, Phone, Pay) {
         var self = this;
+        self.paymentResponse;
         self.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
           self.setImage(phone.images[0]);
         });
@@ -16,9 +17,17 @@ angular.
           self.mainImageUrl = imageUrl;
         };
 
+        // payment
         self.pay = function(phoneId) {
-          alert("OK with " + phoneId);
-          Pay.doPayment();
+          Pay.doPayment()
+          .then(function(data) {
+            console.log("response", data.status);
+            self.paymentResponse = data.status;
+          })
+          .catch(function(error) {
+            console.error("error", error);
+            self.paymentResponse = "ERROR TECHNIQUE !";
+          });
         }
       }
     ]
